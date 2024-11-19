@@ -55,3 +55,28 @@ def add_student():
         print(f"Студента '{pib}' успішно додано.")
     except ValueError:
         print("Невірний формат введених даних. Спробуйте ще раз.")
+
+# (Руденко Данііл КН-33.2)
+# Функція для видалення студента
+def remove_student():
+    pib = input("Введіть ПІБ студента для видалення: ")
+    if pib in students:
+        del students[pib]
+        print(f"Студента '{pib}' видалено.")
+    else:
+        print(f"Студент '{pib}' не знайдений в базі даних.")
+
+# (Руденко Данііл КН-33.2)
+# Функція для виведення списку студентів
+def display_students():
+    if not students:
+        print("Немає студентів для відображення.")
+        return
+
+    for pib, info in students.items():
+        print(f"\nПІБ: {pib}")
+        print(f"Група: {info['group']}")
+        print(f"Курс: {info['course']}")
+        print("Оцінки:")
+        for subject, grade in info['grades'].items():
+            print(f"  {subject}: {grade}")
