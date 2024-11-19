@@ -101,3 +101,32 @@ def edit_grades():
             print("Оцінка повинна бути числом.")
 
     print(f"Оцінки студента '{pib}' оновлено.")
+# (Глумний Тимур КН-33.2)
+# Основне меню для користувача
+def main():
+    while True:
+        print("\nМеню:")
+        print("1. Додати нового студента")
+        print("2. Показати всіх студентів")
+        print("3. Видалити студента")
+        print("4. Редагувати оцінки студента")
+        print("5. Вийти з програми")
+
+        choice = input("Виберіть дію (1-5): ")
+
+        if choice == "1":
+            add_student()
+        elif choice == "2":
+            display_students()
+        elif choice == "3":
+            remove_student()
+        elif choice == "4":
+            edit_grades()
+        elif choice == "5":
+            print("Вихід з програми.")
+            break
+        else:
+            print("Невірний вибір. Спробуйте ще раз.")
+
+# Запуск програми
+main()
